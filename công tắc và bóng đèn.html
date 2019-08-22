@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Swiich-lamp</title>
+</head>
+
+<body>
+<script>
+        function SwitchButton() {
+            this.status;
+            this.lamp;
+            this.connectToLamp=function (lam) {
+                this.lamp=lam;
+            };
+            this.switchOn=function (lam) {
+                lam.turnOn();
+            };
+            this.switchOff=function (lam) {
+                 return lam.turnOff();
+            }
+        }
+
+
+
+        function Lamp() {
+            this.status=true;
+            this.turnOff=function () {
+                console.log("đèn tắt");
+                this.status=false;
+            };
+            this.turnOn=function () {
+                console.log(" đèn sáng");
+                this.status=true;
+            }
+        }
+
+
+        let button =new SwitchButton();
+        let lam=new Lamp();
+        console.log(x);
+        console.log(lam.status);
+        button.switchOff(lam);
+        console.log(lam.status);
+        button.switchOn(lam);
+        console.log(lam.status);
+</script>
+</body>
+</html>
